@@ -1,0 +1,166 @@
+html {
+    background-color: #1E2A38; /* Dark blue background */
+}
+#select{
+    color: #FFD700; /* Gold text */
+    text-transform: uppercase; 
+    font-size: 200%;
+    margin: 0;
+    display: inline;
+}
+#search {
+    color: #FFD700; /* Gold text */
+    text-transform: uppercase; 
+    font-size: 200%;
+    margin: 0;   
+}
+#theatreSelection {
+    display: flex;
+    flex-shrink: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#theatre {
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    font-size: 110%;
+    margin-left: 20px;
+}
+#headerText{
+    color: #FFD700; /* Gold text */
+    font-size: 200%;
+}
+#line {
+    color: #FFD700; /* Gold line */
+    box-shadow: 0 0 .2rem #000,
+    0 0 .1rem #000,
+    0 0 0.9rem #FFD700, /* Gold glow */
+    0 0 0.9rem #FFD700, /* Gold glow */
+    0 0 0.9rem #FFD700, /* Gold glow */
+    inset 0 0 1.0rem #FFD700; /* Gold glow */
+}
+
+#frame {
+    display: flex;
+    color: #FFF; /* White text */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-style: dotted;
+    border-color: #FFD700; /* Gold border */
+    align-items: center;
+}
+#frameTime {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    border: 1px;
+    border-style: solid;
+    border-color: #FFD700; /* Gold border */
+    font-size: 120%;
+    text-transform: uppercase;
+    box-shadow: 0 0 .2rem #000,
+            0 0 .1rem #000,
+            0 0 0.1rem #FFD700, /* Gold glow */
+            0 0 0.1rem #FFD700, /* Gold glow */
+            0 0 0.9rem #FFD700, /* Gold glow */
+            inset 0 0 1.0rem #FFD700; /* Gold glow */
+}
+#time {
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#auditorium {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#img {
+    margin-left: 100px;
+    margin-top: 2px;
+}
+#img3 {
+    margin-left: 20px;
+}
+#movie {
+    color: #FFD700; /* Gold text */
+    font-size: 150%;
+    width: 200px;
+    margin-left: 30px;
+    align-items: center;
+}
+#info {
+    margin-left: 30px;
+    font-size: 200%;
+    padding: 10px;
+    transition: transform .1s;
+    text-transform: uppercase;
+    background-color: #1E2A38; /* Dark blue background */
+    box-shadow: 0 0 .2rem #000,
+            0 0 .1rem #000,
+            0 0 0.1rem #FFD700, /* Gold glow */
+            0 0 0.1rem #FFD700, /* Gold glow */
+            0 0 0.9rem #FFD700, /* Gold glow */
+            inset 0 0 1.0rem #FFD700; /* Gold glow */
+}
+#info:hover {
+    transform: scale(1.2);
+}
+a {
+    text-decoration: none;
+    color: #FFD700; /* Gold text */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#inputf {
+    height: 24px;
+    text-align: center;
+    align-items: center;
+    width: 150px;
+    font-size: 90%;
+    margin-left: 20px; 
+}
+#sButton {
+    height: 40px;
+    margin: auto;
+    position: relative;
+    bottom: 5px;
+    cursor: pointer;
+    background-color: #FFD700; /* Gold button background */
+    font-weight: 500;
+    font-size: large;
+    box-shadow: 0 0 .2rem #000,
+    0 0 .1rem #000,
+    0 0 0.1rem #FFD700, /* Gold glow */
+    0 0 0.1rem #FFD700, /* Gold glow */
+    0 0 0.9rem #FFD700, /* Gold glow */
+    inset 0 0 1.0rem #FFD700; /* Gold glow */
+}
+#valitse {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+}
+#haku {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+}
+#search {
+    margin-left: 20px;
+}
+#sButton:hover{
+    transform: scale(1.1);
+}
+@media (max-width: 1010px) {
+    #frame {
+      flex-direction: column;
+    }
+    #theatreSelection {
+        flex-direction: column;
+    }
+}

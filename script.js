@@ -1,3 +1,5 @@
+var shows;
+
 document.getElementById('theatre').addEventListener('change', loadTheatre);
 document.getElementById('sButton').addEventListener('click', searchMovie);
 
@@ -6,43 +8,15 @@ function loadTheatre() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://www.finnkino.fi/xml/Schedule/', true);
     xhr.send();
-    xhr.onload = function() {
+    xhr.onload = function () {
         if (xhr.status == 200) {
             xmlDoc = xhr.responseXML;
-            show = xmlDoc.getElementsByTagName('Show');
-            var tID = null;
+            shows = xmlDoc.getElementsByTagName('Show');
             delete1();
-            for (var i = 0; i < show.length; i++) {
-                for (var a = 0; a < show[i].children.length; a++) {
-                    var str = show[i].children[a].nodeName;
-                    if (str.includes('TheatreID')) {
-                        tID = show[i].children[a].innerHTML;
-                        if (theatreId == tID) {
-                            document.getElementById("shows").innerHTML += 
-                                "<div id='frame'>"
-                                + "<div id='movie'>" 
-                                + moviename(i)
-                                + "</div>"
-                                + "<div id='img'>" 
-                                + "<img src='" + image(i) +"' width='100'> </img>"
-                                + "</div>"
-                                + "<div id='img2'>" 
-                                + "<img src='" + rating(i) +"' width='50' id='img3'> </img>"
-                                + "</div>"
-                                + "<div id='frameTime'>"
-                                + "<div id='time'>" 
-                                + "Show starts at " + startingTime(i) 
-                                + "</div>"
-                                + "<div id='auditorium'>" 
-                                + "Auditorium: "+ auditorium(i) 
-                                + "</div>"
-                                + "</div>"
-                                + "<div id='info'>" 
-                                + "<a href='" + linkInfo(i) + "'> More info</a>" 
-                                + "</div>"
-                                + "</div>";
-                        }
-                    }
+            for (var i = 0; i < shows.length; i++) {
+                var theaterId = shows[i].getElementsByTagName('TheatreID')[0].textContent;
+                if (theaterId === theatreId) {
+                    displayMovieInfo(i);
                 }
             }
         }
@@ -50,48 +24,47 @@ function loadTheatre() {
 }
 
 function searchMovie() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://www.finnkino.fi/xml/Schedule/', true);
-    xhr.send();
-    xhr.onload = function() {
-        if (xhr.status == 200) {
-            xmlDoc = xhr.responseXML;
-            show = xmlDoc.getElementsByTagName('Show');
-            delete1();
-            var userInput = document.getElementById('inputf').value.trim().toUpperCase();
-            for (var a = 0; a < show.length; a++) {
-                var movieName = moviename(a).toUpperCase();
-                if (movieName.includes(userInput)) {
-                    document.getElementById("shows").innerHTML += 
-                        "<div id='frame'>"
-                        + "<div id='movie'>" 
-                        + moviename(a) 
-                        + "</div>"
-                        + "<div id='img'>" 
-                        + "<img src='" + image(a) +"' width='100'> </img>"
-                        + "</div>"
-                        + "<div id='img2'>" 
-                        + "<img src='" + rating(a) +"' width='50' id='img3'> </img>"
-                        + "</div>"
-                        + "<div id='frameTime'>"
-                        + "<div id='time'>" 
-                        + "Show starts at " + startingTime(a) 
-                        + "</div>"
-                        + "<div id='auditorium'>" 
-                        + auditorium(a) 
-                        + "</div>"
-                        + "</div>"
-                        + "<div id='info'>" 
-                        + "<a href='" + linkInfo(a) + "'> More info</a>" 
-                        + "</div>"
-                        + "</div>";
-                }
-            }
+    var keyword = document.getElementById('inputf').value.trim().toUpperCase();
+    var selectedTheater = document.getElementById('theatre').value;
+    
+    delete1();
+    
+    for (var i = 0; i < shows.length; i++) {
+        var movieTitle = shows[i].getElementsByTagName('Title')[0].textContent.toUpperCase();
+        var theaterId = shows[i].getElementsByTagName('TheatreID')[0].textContent;
+        
+        if (movieTitle.includes(keyword) && theaterId === selectedTheater) {
+            displayMovieInfo(i);
         }
     }
 }
 
-// Rest of your code...
+
+function displayMovieInfo(i) {
+    document.getElementById("shows").innerHTML +=
+        "<div id='frame'>"
+        + "<div id='movie'>"
+        + shows[i].getElementsByTagName('Title')[0].textContent
+        + "</div>"
+        + "<div id='img'>"
+        + "<img src='" + shows[i].getElementsByTagName('EventLargeImagePortrait')[0].textContent + "' width='100'> </img>"
+        + "</div>"
+        + "<div id='img2'>"
+        + "<img src='" + shows[i].getElementsByTagName('RatingImageUrl')[0].textContent + "' width='50' id='img3'> </img>"
+        + "</div>"
+        + "<div id='frameTime'>"
+        + "<div id='time'>"
+        + "Show starts at " + shows[i].getElementsByTagName('dttmShowStart')[0].textContent.substr(11, 5)
+        + "</div>"
+        + "<div id='auditorium'>"
+        + "Auditorium: " + shows[i].getElementsByTagName('TheatreAuditorium')[0].textContent
+        + "</div>"
+        + "</div>"
+        + "<div id='info'>"
+        + "<a href='" + shows[i].getElementsByTagName('EventURL')[0].textContent + "'> More info</a>"
+        + "</div>"
+        + "</div>";
+}
 
 function delete1() {
     document.getElementById("shows").innerHTML = " ";

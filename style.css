@@ -1,25 +1,38 @@
-html {
-    background-color: #333; /* Dark gray background */
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    background-color: #f0f0f0; /* Light gray background */
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    color: #333; /* Dark gray text color */
 }
 
 #header {
-    background-color: #222; /* Dark background for header */
+    background-color: #0077b6; /* Dark blue header background */
     text-align: center;
-    padding: 20px;
-    color: #FFD700; /* Gold text color */
-    font-size: 24px;
+    padding: 20px 0;
+}
+
+#headerText {
+    color: #fff; /* White text color */
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+hr#line {
+    border: 1px solid #ddd; /* Light gray line */
+    margin: 20px 0;
 }
 
 #theatreSelection {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 #theatre {
@@ -27,9 +40,9 @@ body {
     font-size: 16px;
     margin-right: 20px;
     padding: 5px;
-    background-color: #444; /* Dark gray background for dropdown */
-    color: #FFF; /* White text color */
-    border: none;
+    background-color: #fff; /* White dropdown background */
+    color: #333; /* Dark gray text color */
+    border: 1px solid #ddd; /* Light gray border */
     border-radius: 4px;
 }
 
@@ -39,20 +52,21 @@ body {
 }
 
 #inputf {
-    height: 24px;
+    height: 40px;
     font-size: 16px;
     padding: 5px;
-    background-color: #444; /* Dark gray background for input */
-    color: #FFF; /* White text color */
-    border: none;
+    background-color: #fff; /* White input background */
+    color: #333; /* Dark gray text color */
+    border: 1px solid #ddd; /* Light gray border */
     border-radius: 4px;
+    margin-right: 10px;
 }
 
 #sButton {
     height: 40px;
     padding: 5px 20px;
-    background-color: #FFD700; /* Gold button background */
-    color: #333; /* Dark gray text color */
+    background-color: #f5820b; /* Orange button background */
+    color: #fff; /* White text color */
     font-weight: bold;
     font-size: 16px;
     border: none;
@@ -62,7 +76,7 @@ body {
 }
 
 #sButton:hover {
-    background-color: #444; /* Dark gray background on hover */
+    background-color: #dd6e04; /* Darker orange on hover */
 }
 
 #shows {
@@ -72,14 +86,15 @@ body {
 }
 
 .frame {
-    background-color: #444; /* Dark gray background for movie frames */
-    color: #FFF; /* White text color */
-    border: 2px solid #333; /* Dark gray border */
+    background-color: #fff; /* White movie frame background */
+    color: #333; /* Dark gray text color */
+    border: 1px solid #ddd; /* Light gray border */
     border-radius: 4px;
     margin: 20px;
     padding: 20px;
     width: 300px;
     text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Light shadow */
 }
 
 .frame img {
@@ -89,7 +104,7 @@ body {
 
 #info a {
     text-decoration: none;
-    color: #FFD700; /* Gold link color */
+    color: #0077b6; /* Dark blue link color */
     font-weight: bold;
 }
 

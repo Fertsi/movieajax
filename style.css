@@ -9,7 +9,7 @@ body {
 
 h1 {
     text-align: center;
-    color: white;
+    color: yellow;
     padding: 30px;
 }
 
@@ -20,11 +20,10 @@ form {
 }
 
 #searchButton {
-    font-family: "Trebuchet MS", sans-serif; 
+    color: yellow;
+    background-color: transparent;
     border: none;
     outline: none;
-    background-color: white;
-    color: blue;
     cursor: pointer;
     padding: 3px 10px 3px 10px;
     border-radius: 4px;
@@ -35,13 +34,13 @@ table, td {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    background-color: black;
 }
 
 table {
     border-spacing: 10px;
     border-radius: 8px;
     opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
 }
 
 #pic {
@@ -55,12 +54,14 @@ table {
 #today {
     vertical-align: bottom;
     font-size: small;
+    color: yellow;
 }
 
 #startTime {
     font-size: 175%;
     font-weight: bold;
     vertical-align: top; 
+    color: yellow;
 }
 
 #title {
@@ -68,19 +69,22 @@ table {
     font-weight: bold;
     font-size: 150%;
     vertical-align: bottom;
+    color: yellow;
 }
 
 #auditorium {
     vertical-align: top;    
+    color: yellow;
 }
 
 #duration {
     padding: 5px;
     font-size: small;
+    color: yellow;
 }
 
 a:link, a:hover, a:visited {
-    color: white;
+    color: yellow;
     background-color: transparent;
     text-decoration: underline;
 }
@@ -95,14 +99,25 @@ a:link, a:hover, a:visited {
     font-size: 16px;
     border: none;
     outline: none;
-    background-color: white;
-    color: blue;
+    background-color: transparent;
+    color: yellow;
     cursor: pointer;
     padding: 5px;
     border-radius: 4px;
     font-weight: bold;
-  }
-  
+}
+
 #scroll:hover {
-    border: 3px solid;
+    border: 3px solid yellow;
+}
+
+#cinemaList {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+    padding: 20px;
+    border-radius: 10px;
+    color: yellow;
+}
+
+#searchText, #searchLabel, #areaText, #areaLabel {
+    color: yellow; /* Set text color to yellow */
 }

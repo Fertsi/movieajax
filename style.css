@@ -123,17 +123,23 @@ a:link, a:hover, a:visited {
 }
 
 #search {
+    color: black !important;
+}
+
+
+form[name="theatreList"] datalist option {
     color: black;
 }
 
 
-form[name="theatreList"] label {
-    color: yellow;
-}
-
 form[name="theatreList"] input {
     color: yellow;
 }
+
+form[name="theatreList"] input#cinema {
+    color: black !important;
+}
+
 
 /* Change color of dropdown arrow */
 select {
@@ -142,3 +148,8 @@ select {
     border: 1px solid yellow; /* Add border style */
     /* Add any other styles you may want for the select element */
 }
+
+datalist option {
+    color: black;
+}
+

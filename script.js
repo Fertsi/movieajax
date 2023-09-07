@@ -25,6 +25,7 @@ document.getElementById("cinema").addEventListener("click", function(){
 
 // When user has chosen an area or cinema from the drop-down menu, start loading XML
 function showMovies() {
+   document.getElementById("cinema").style.color = "black";
    document.getElementById("cinema").select();
    switch (document.getElementById("cinema").value) {
     case "Pääkaupunkiseutu":

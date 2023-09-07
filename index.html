@@ -2,12 +2,13 @@
 <html lang="fi">
     <head>
         <title>Cinema Information App</title>
+        <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+         <body>
         <h1 id="heading"></h1>
         <form name="theatreList" id="theatreList" >
-            Valitse alue tai teatteri:
+            <label for="cinema" style="color: yellow;">Valitse alue tai teatteri:</label>
             <input id="cinema" list="theatres" name ="theatres" onchange="showMovies()">
             <datalist id="theatres">
                 <option value="Pääkaupunkiseutu"></option>
@@ -20,7 +21,7 @@
                 <option value="Helsinki: MAXIM"></option>
                 <option value="Helsinki: TENNISPALATSI"></option>
                 <option value="Vantaa: FLAMINGO"></option>
-                <option value="Jyväskylä: FANTASIA"></option>
+                <option value="Jyv&auml;skyl&auml;: FANTASIA"></option>
                 <option value="Kuopio: SCALA"></option>
                 <option value="Lahti: KUVAPALATSI"></option>
                 <option value="Lappeenranta: STRAND"></option>
@@ -33,8 +34,10 @@
                 <option value="Turku: KINOPALATSI"></option>
                 <option value="Raisio: LUXE MYLLY"></option>
             </datalist>
+            
+            
             <br><br>
-            Etsi teatteri hakusanalla:
+            <label for="search" style="color: yellow;">Etsi teatteri hakusanalla:</label>
             <input type="text" id="search">
             <input type ="button" id="searchButton" value="Etsi" onclick="searchFunction()">
             <br><br>

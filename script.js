@@ -27,9 +27,10 @@ document.getElementById("cinema").addEventListener("click", function(){
 function showMovies() {
    document.getElementById("cinema").select();
    switch (document.getElementById("cinema").value) {
-      case "Pääkaupunkiseutu":
-         theatreID = 1014;
-         break;
+    case "Pääkaupunkiseutu":
+        theatreID = 1014;
+        searchWord = "Pääkaupunkiseutu";
+        break;
       case "Espoo":
          theatreID = 1012;
          break;
@@ -57,9 +58,10 @@ function showMovies() {
       case "Vantaa: FLAMINGO":
          theatreID = 1013;
          break;
-      case "Jyväskylä: FANTASIA":
-         theatreID = 1015;
-         break;
+        case "Jyväskylä: FANTASIA":
+            theatreID = 1015;
+            searchWord = "Jyväskylä: FANTASIA";
+            break;
       case "Kuopio: SCALA":
          theatreID = 1016;
          break;
@@ -93,13 +95,13 @@ function showMovies() {
       case "Raisio: LUXE MYLLY":
          theatreID = 1046;
          break;
-      default:
-         theatreID = null;
-         var name = document.getElementById("cinema").value;
-         alert("Hakemaasi alueen tai teatterin nimeä \"" + name + 
-         "\" ei löytynyt. Ole hyvä ja valitse nimi alasvetovalikosta tai etsi hakusanalla.");    
-         document.getElementById("cinema").value = "";
-   }
+         default:
+            theatreID = null;
+            var name = document.getElementById("cinema").value;
+            alert("Hakemaasi alueen tai teatterin nimeä \"" + name + 
+            "\" ei löytynyt. Ole hyvä ja valitse nimi alasvetovalikosta tai etsi hakusanalla.");    
+            document.getElementById("cinema").value = "";
+    }
    loadXML();
 }
 

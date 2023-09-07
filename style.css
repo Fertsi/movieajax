@@ -1,9 +1,9 @@
 body {
-    background-image: url('https://zameenblog.s3.amazonaws.com/blog/wp-content/uploads/2019/08/Cover-1440x625-1.jpg');
+    background-image: url('https://img.freepik.com/free-vector/red-movie-theater-seats-with-curtains-background_1017-38388.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-family: "Trebuchet MS", sans-serif; 
+    font-family: "Trebuchet MS", sans-serif;
     color: white;
 }
 
@@ -118,6 +118,27 @@ a:link, a:hover, a:visited {
     color: yellow;
 }
 
-#searchText, #searchLabel, #areaText, #areaLabel {
-    color: yellow; /* Set text color to yellow */
+#areaText, #areaLabel, #searchLabel {
+    color: yellow;
+}
+
+#search {
+    color: black;
+}
+
+
+form[name="theatreList"] label {
+    color: yellow;
+}
+
+form[name="theatreList"] input {
+    color: yellow;
+}
+
+/* Change color of dropdown arrow */
+select {
+    color: black; /* Change the text color */
+    background-color: transparent; /* Make the background transparent */
+    border: 1px solid yellow; /* Add border style */
+    /* Add any other styles you may want for the select element */
 }

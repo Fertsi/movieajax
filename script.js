@@ -1,10 +1,10 @@
-// Enable user to start searching immediately after page has loaded without having to click on anything
+
 window.onload = document.getElementById("cinema").select();
 
 var theatreID;
 var searchWord;
 
-// Placing contents to h1
+
 var date = new Date();
 var day = date.getDate();
 if (day < 10) {
@@ -18,12 +18,12 @@ var year = date.getFullYear();
 date = day + "." + month + "." + year;
 document.getElementById("heading").innerHTML = "Finnkino-elokuvateattereiden tarjonta<br>" + date;
 
-// When user has already used the search field and wants to use the drop-down menu, the search field is emptied to avoid confusion
+
 document.getElementById("cinema").addEventListener("click", function(){
    document.getElementById("search").value = "";
 });
 
-// When user has chosen an area or cinema from the drop-down menu, start loading XML
+
 function showMovies() {
    document.getElementById("cinema").style.color = "black";
    document.getElementById("cinema").select();
@@ -106,7 +106,7 @@ function showMovies() {
    loadXML();
 }
 
-// When user has searched for an area or cinema using the search field, start loading XML
+
 function searchFunction() {
    var valinta = document.getElementById("search").value;
    valinta = valinta.trim();
@@ -277,7 +277,7 @@ function searchFunction() {
          document.getElementById("search").value = "";
    }
    loadXML();
-   //Convert user's search field input to a more "appropriate" searchWord, to clarify which cinema's data is being fetched
+
    document.getElementById("search").value = searchWord;   
    document.getElementById("search").select();
    return false;
@@ -302,7 +302,7 @@ function parseXML(xml) {
    var xmlData = xml.responseXML;
    var table = "<table>";
    var x = xmlData.getElementsByTagName("Show");
-   // In case there are no shows on the current date, alert user and empty search fields
+
    if (x.length == 0) {
       var listName = document.getElementById("cinema").value;
       var cinemaName;
@@ -316,14 +316,14 @@ function parseXML(xml) {
       document.getElementById("search").value = "";
    } else {
       for (i=0; i < x.length; i++) {
-         //Check whether chosen image tag exists in XML content
+
          var tablePic;
             if (x[i].getElementsByTagName("EventSmallImagePortrait").length == 0) {
                tablePic = "<br>Image<br>not<br>found<br><br>";
             } else {
                tablePic = "<img id='moviePic' src='" + x[i].getElementsByTagName("EventSmallImagePortrait")[0].childNodes[0].nodeValue + "'></img>";
             }
-         //Save the result from the AJAX call into var table
+
          table += "<tr><td id='pic' rowspan='2'> <a href='" + 
          x[i].getElementsByTagName("EventURL")[0].childNodes[0].nodeValue + "' target='_blank'>"+ tablePic +
          "</a></td><td id='today'>"+date+"</td><td id='title'><a href='"+
@@ -344,7 +344,7 @@ function parseXML(xml) {
    }
 }
 
-//Make "Scroll to top" button visible and usable when the user scrolls down 20px from the top of the document
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -361,7 +361,7 @@ document.getElementById("scroll").addEventListener("click", function(){
    document.getElementById("cinema").select();
 });
 
-//Convert movie duration data from minutes to hours and minutes
+
 function timeConvert(duration) {
    var minutes = duration % 60;
    var hours = (duration - minutes) / 60;
